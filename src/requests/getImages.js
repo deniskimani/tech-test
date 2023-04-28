@@ -7,24 +7,15 @@ function getImages(query) {
     return axios
       .get(`https://images-api.nasa.gov/search?q=${query}`)
       .then((response) => {
-        const imageResults = () => {
-          const array = response.data.collection.items;
-          const parsedImages = [];
-          const images = [];
-
-          array.forEach((element) => {
-            if (element.data[0].media_type === "image") {
-              parsedImages.push(element);
-            }
-
-            const image = parsedImages.map((image) => image.links[0].href);
-            images.push(image);
-          });
-
-          // console.log(images);
+        console.log(response.data.collection.items);
+        const imageResults = (array) => {
+          const parsedImages = array.filter(
+            (element) => element.data[0].media_type === "image"
+          );
+          const images = parsedImages.map((image) => image.links[0].href);
           return images;
         };
-        return imageResults();
+        return imageResults(response.data.collection.items);
       })
       .catch((err) => {
         console.log(err);
