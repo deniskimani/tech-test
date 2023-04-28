@@ -1,3 +1,6 @@
+.search-form{
+  justify-content: center;
+}
 .search-input {
 
     width: 20%;
@@ -5,9 +8,22 @@
     border-radius: 11px;
     font-size: 20px;
     padding: 0 10px;
+    border-bottom: 1px solid rgb(141, 136, 136) ;
   }
-  form{
+form{
     
-    display: flex;
-    flex-direction: row;
-  }
+  display: flex;
+  flex-direction: row;
+}
+
+.search-btn{
+  background-color: #bc2020;
+  border: none;
+  width: 70px;
+  border-top-right-radius: 11px;
+  border-bottom-right-radius: 11px;
+  position: relative;
+  right: 10px;
+  color: white;
+  font-weight: 700;
+}

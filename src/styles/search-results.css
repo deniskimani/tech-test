@@ -1,5 +1,16 @@
+.container{
+    margin: 80px 3%;
+    display: inline-block;
+}
 .card-image{
-    width: 300px;
+    width: 17%;
+    height: 120px;
     border-radius: 10px;
     margin: 10px 50px;
+    display: inline;
+}
+.unavailable{
+    margin-top: 80px;
+    text-align: center;
+    font-weight: 500;
 }
