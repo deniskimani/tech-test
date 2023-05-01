@@ -1,12 +1,13 @@
 import { useState } from "react";
 import "../styles/search.css";
 import getImages from "../requests/getImages";
-const Search = ({ setSearchResults }) => {
+const Search = ({ setSearchResults, setInput }) => {
   const [value, setValue] = useState();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     setSearchResults(await getImages(value));
+    setInput(value);
   };
   return (
     <div>
